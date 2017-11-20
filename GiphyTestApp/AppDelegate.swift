@@ -15,7 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let mainController = HomeViewController()
+        let navigationController = UINavigationController(rootViewController: mainController)
+        
+        navigationController.navigationBar.isTranslucent = false
+        
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        
+        self.window = window
+        
+        //additional GUI setup
+        UITableView.appearance().separatorColor = UIColor.black
+        
         return true
     }
 
